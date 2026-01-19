@@ -1,7 +1,7 @@
 const valentines = new Date("2026-02-14T00:00:00");
 
 const messages = [
-  "I survived today. Barely. Missing you didn’t help.",
+  "I dint survive today. Barely. Missing you didn’t help.",
   "You owe me a hug. With interest.",
   "I saw something cute today. Annoying how often that’s you.",
   "Reminder: you’re my favorite person. No competition.",
