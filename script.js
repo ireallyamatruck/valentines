@@ -1,7 +1,5 @@
-// Set Valentine’s Day
 const valentines = new Date("2026-02-14T00:00:00");
 
-// Your daily messages (edit these!)
 const messages = [
   "Day 1: I saw something today that reminded me of you.",
   "Day 2: You live rent-free in my head.",
@@ -23,15 +21,22 @@ function update() {
   const now = new Date();
   const diff = valentines - now;
 
-  const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
   document.getElementById("countdown").innerText =
-    days > 0 ? `${days} days left until Valentine’s 💘` : "It’s Valentine’s Day ❤️";
+    daysLeft > 0
+      ? `${daysLeft} days left until Valentine’s 💘`
+      : "It’s Valentine’s Day ❤️";
 
-  const messageIndex = Math.min(messages.length - 1, messages.length - days - 1);
+  let index = messages.length - daysLeft - 1;
 
-  document.getElementById("message").innerText =
-    messageIndex >= 0 ? messages[messageIndex] : "The countdown has begun 💞";
+  if (index < 0) {
+    document.getElementById("message").innerText = "The countdown has begun 💞";
+  } else if (index >= messages.length) {
+    document.getElementById("message").innerText = messages[messages.length - 1];
+  } else {
+    document.getElementById("message").innerText = messages[index];
+  }
 }
 
 update();
