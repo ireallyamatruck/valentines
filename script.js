@@ -37,10 +37,21 @@ function update() {
 
   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
+  if (diff > 0) {
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
   document.getElementById("countdown").innerText =
-    daysLeft > 0
-      ? `${daysLeft} days left until Valentine’s 💘`
-      : "It’s Valentine’s Day ❤️";
+    `${days} days left until Valentine’s 💘`;
+
+  document.getElementById("timer").innerText =
+    `${hours}h ${minutes}m ${seconds}s`;
+} else {
+  document.getElementById("countdown").innerText = "It’s Valentine’s Day ❤️";
+  document.getElementById("timer").innerText = "";
+}
 
   let index = messages.length - daysLeft;
 
