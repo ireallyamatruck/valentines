@@ -35,25 +35,31 @@ function update() {
   const now = new Date();
   const diff = valentines - now;
 
-  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  // If Valentine’s has passed
+  if (diff <= 0) {
+    document.getElementById("countdown").innerText = "It’s Valentine’s Day ❤️";
+    document.getElementById("timer").innerText = "";
+    document.getElementById("message").innerText = messages[messages.length - 1];
+    return;
+  }
 
-  if (diff > 0) {
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  // Time calculations
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds / (60 * 60)) % 24);
+  const minutes = Math.floor((totalSeconds / 60) % 60);
+  const seconds = totalSeconds % 60;
 
+  // Display countdown
   document.getElementById("countdown").innerText =
     `${days} days left until Valentine’s 💘`;
 
   document.getElementById("timer").innerText =
     `${hours}h ${minutes}m ${seconds}s`;
-} else {
-  document.getElementById("countdown").innerText = "It’s Valentine’s Day ❤️";
-  document.getElementById("timer").innerText = "";
-}
 
-  let index = messages.length - daysLeft;
+  // Message logic
+  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  const index = messages.length - daysLeft;
 
   if (index < 0) {
     document.getElementById("message").innerText = "The countdown has begun 💞";
@@ -63,6 +69,7 @@ function update() {
     document.getElementById("message").innerText = messages[index];
   }
 }
+
 
 update();
 setInterval(update, 1000);

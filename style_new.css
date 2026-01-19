@@ -13,7 +13,7 @@ body {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.67);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blue(14px);
 
@@ -23,7 +23,7 @@ body {
     width: 75%;
     text-align: center;
 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.20);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.10);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
