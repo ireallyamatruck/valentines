@@ -1,0 +1,41 @@
+body {
+  background: radial-gradient(circle at top, #ffd1dc, #ff9aaf, #f875aa);
+  font-family: "Poppins", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 2.3rem;
+  color: #5a0f3c; /* plum */
+  margin-bottom: 10px;
+}
+
+#countdown {
+  font-size: 1.2rem;
+  color: #6b1248; /* softer plum */
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#message {
+  margin-top: 25px;
+  font-size: 1.15rem;
+  color: #4a0831; /* deeper plum */
+  line-height: 1.6;
+}
