@@ -37,7 +37,7 @@ function update() {
 
   // If Valentine’s has passed
   if (diff <= 0) {
-    document.getElementById("countdown").innerText = "It’s Valentine’s Day ❤️";
+    document.getElementById("countdown").innerText = "Happy Valentine's Sweetheart 💋";
     document.getElementById("timer").innerText = "";
     document.getElementById("message").innerText = messages[messages.length - 1];
     return;
