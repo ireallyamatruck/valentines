@@ -52,7 +52,7 @@ function update() {
 
   // Display countdown
   document.getElementById("countdown").innerText =
-    `${days} days left until Valentine’s 💘`;
+    `${days} days left till you're my Valentine's 🎀`;
 
   document.getElementById("timer").innerText =
     `${hours}h ${minutes}m ${seconds}s`;
