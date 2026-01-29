@@ -5,51 +5,60 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
 
-  background: linear-gradient(135deg, #ffd6e8, #fcbad3, #f9a8c7);
+  background: linear-gradient(135deg, #ffe0ec, #ffc2dc, #ffb3d1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.67);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
-  padding: 45px;
-  border-radius: 50px;
-  max-width: 420px;
+  padding: 50px 45px;
+  border-radius: 40px;
+  max-width: 430px;
   width: 90%;
   text-align: center;
 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  font-size: 2.4rem;
-  color: #5a103a; /* plum */
-  margin-bottom: 10px;
+  font-size: 2.6rem;
+  color: #5a103a;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 #countdown {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #7a1c4d;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 #message {
-  margin-top: 25px;
-  font-size: 1.15rem;
+  margin-top: 28px;
+  font-size: 1.2rem;
   color: #4a082c;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 #timer {
-  margin-top: 8px;
-  font-size: 1rem;
-  letter-spacing: 1px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
   color: #7a1c4d;
-  opacity: 0.85;
+  opacity: 0.75;
 }
