@@ -39,23 +39,22 @@ function update() {
   const seconds = totalSeconds % 60;
 
   // Display countdown
-  if (days>1) {
-    document.getElementById("countdown").innerText =
-    `${days} days left till you're my Valentine's 🎀`;
+let timerText = "";
 
-    document.getElementById("timer").innerText =
-    `${days} days ${hours}h ${minutes}m ${seconds}s`;
+if (days > 0) {
+  timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
+} 
+else if (hours > 0) {
+  timerText = `${hours}h ${minutes}m ${seconds}s`;
+} 
+else if (minutes > 0) {
+  timerText = `${minutes}m ${seconds}s`;
+} 
+else {
+  timerText = `${seconds}s`;
+}
 
-  } else if (days==1) {
-    document.getElementById("countdown").innerText =
-    `${days} day left till you're my Valentine's 🎀`;
-
-    document.getElementById("timer").innerText =
-    `${days} day ${hours}h ${minutes}m ${seconds}s`;
-  } else {
-    document.getElementById("timer").innerText =
-    `${hours}h ${minutes}m ${seconds}s`;
-  }
+document.getElementById("timer").innerText = timerText;
 
   
   // Message logic
