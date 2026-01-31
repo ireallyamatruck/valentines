@@ -5,6 +5,7 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
 
+  /* Soft pink dreamy background */
   background: linear-gradient(135deg, #ffd6e8, #fcbad3, #f9a8c7);
   display: flex;
   align-items: center;
@@ -12,12 +13,12 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.67);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   padding: 45px;
-  border-radius: 50px;
+  border-radius: 30px;
   max-width: 420px;
   width: 90%;
   text-align: center;
@@ -44,12 +45,4 @@ h1 {
   font-size: 1.15rem;
   color: #4a082c;
   line-height: 1.6;
-}
-
-#timer {
-  margin-top: 8px;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  color: #7a1c4d;
-  opacity: 0.85;
 }
