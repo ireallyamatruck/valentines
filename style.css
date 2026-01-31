@@ -5,76 +5,51 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
 
-  background: linear-gradient(135deg, #3b0a2a, #5a103a, #7a1c4d);
-
+  background: linear-gradient(135deg, #ffd6e8, #fcbad3, #f9a8c7);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CARD */
 .card {
-  background: rgba(255, 228, 239, 0.88);
+  background: rgba(255, 255, 255, 0.67);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  padding: 60px 80px;
-  border-radius: 44px;
-
-  max-width: 1150px;
-  width: 94%;
-
+  padding: 45px;
+  border-radius: 50px;
+  max-width: 420px;
+  width: 90%;
   text-align: center;
 
-  box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.38),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 45px 120px rgba(0, 0, 0, 0.45);
-}
-
-/* HEADING */
 h1 {
-  font-size: 2.9rem;
-  color: #5a103a;
+  font-size: 2.4rem;
+  color: #5a103a; /* plum */
   margin-bottom: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
-/* COUNTDOWN */
 #countdown {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #7a1c4d;
   font-weight: 500;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
-/* TIMER */
-#timer {
-  margin-top: 6px;
-  font-size: 0.95rem;
-  letter-spacing: 1.5px;
-  color: #7a1c4d;
-  opacity: 0.75;
-}
-
-/* MESSAGE */
 #message {
-  margin-top: 42px;
-  font-size: 1.3rem;
+  margin-top: 25px;
+  font-size: 1.15rem;
   color: #4a082c;
-  line-height: 1.8;
+  line-height: 1.6;
+}
 
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-
-  font-weight: 400;
+#timer {
+  margin-top: 8px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #7a1c4d;
+  opacity: 0.85;
 }
