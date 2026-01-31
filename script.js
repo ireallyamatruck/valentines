@@ -42,14 +42,20 @@ function update() {
   if (days>1) {
     document.getElementById("countdown").innerText =
     `${days} days left till you're my Valentine's 🎀`;
+
+    document.getElementById("timer").innerText =
+    `${days} days ${hours}h ${minutes}m ${seconds}s`;
+
   } else {
     document.getElementById("countdown").innerText =
     `${days} day left till you're my Valentine's 🎀`;
+
+    document.getElementById("timer").innerText =
+    `${days} day ${hours}h ${minutes}m ${seconds}s`;
+
   }
 
-  document.getElementById("timer").innerText =
-    `${days}days ${hours}h ${minutes}m ${seconds}s`;
-
+  
   // Message logic
   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
   const index = messages.length - daysLeft - 1;
