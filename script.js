@@ -20,7 +20,7 @@ const messages = [
 
 
 function update() {
-  const now = new Date("2026-02-13T12:00:00");
+  const now = new Date("2026-02-11T12:00:00");
   const diff = valentines - now;
 
   // If Valentine’s has passed
@@ -46,13 +46,15 @@ function update() {
     document.getElementById("timer").innerText =
     `${days} days ${hours}h ${minutes}m ${seconds}s`;
 
-  } else {
+  } else if (days==1) {
     document.getElementById("countdown").innerText =
     `${days} day left till you're my Valentine's 🎀`;
 
     document.getElementById("timer").innerText =
     `${days} day ${hours}h ${minutes}m ${seconds}s`;
-
+  } else {
+    document.getElementById("timer").innerText =
+    `${hours}h ${minutes}m ${seconds}s`;
   }
 
   
