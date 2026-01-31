@@ -21,7 +21,7 @@ const messages = [
 
 function update() {
   const now = new Date();
-  const diff = valentines - now;
+  const diff = valentines - now + 1;
 
   // If Valentine’s has passed
   if (diff <= 0) {
