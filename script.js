@@ -10,11 +10,11 @@ const messages = [
   "I hope we are cats in the next life, so I can purr on you all the time.",
   "I think of you everytime I see something nice, cute, or hear something funny.",
   "Your presence brings the fun out of me.",
-  "I love when you take care of things for me. <br> Like yes tell me how to eat, give me skincare, kiss me.",
+  "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me.",
   "Growing old with you will be the most sweetest thing I'd have done in life.",
   "I can't contemplate how pretty you look, how deep I've fallen in love with you.",
-  "Can we be the bestest friends forever? <br> I'd love to take care of you and be close with you.",
-  "Two years, lots of memories and a lifetime to go with you. <br> I love you so much baby"
+  "Can we be the bestest friends forever? I'd love to take care of you and be close with you.",
+  "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
 
