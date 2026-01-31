@@ -5,7 +5,6 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
 
-  /* Plum background */
   background: linear-gradient(135deg, #3b0a2a, #5a103a, #7a1c4d);
 
   display: flex;
@@ -15,41 +14,41 @@ body {
 
 /* CARD */
 .card {
-  /* Light pink card */
-  background: rgba(255, 228, 239, 0.85);
+  background: rgba(255, 228, 239, 0.88);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 
-  padding: 55px 70px;              /* more horizontal breathing room */
-  border-radius: 42px;
+  padding: 60px 80px;
+  border-radius: 44px;
 
-  max-width: 1100px;               /* WIDER */
-  width: 92%;
+  max-width: 1150px;
+  width: 94%;
 
   text-align: center;
 
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    0 35px 90px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 45px 120px rgba(0, 0, 0, 0.45);
 }
 
 /* HEADING */
 h1 {
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   color: #5a103a;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-/* COUNTDOWN TEXT */
+/* COUNTDOWN */
 #countdown {
   font-size: 1.25rem;
   color: #7a1c4d;
@@ -59,21 +58,23 @@ h1 {
 
 /* TIMER */
 #timer {
-  margin-top: 12px;
-  font-size: 1rem;
-  letter-spacing: 1.4px;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
   color: #7a1c4d;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 /* MESSAGE */
 #message {
-  margin-top: 34px;
-  font-size: 1.25rem;
+  margin-top: 42px;
+  font-size: 1.3rem;
   color: #4a082c;
-  line-height: 1.75;
+  line-height: 1.8;
 
-  max-width: 850px;                /* keeps text elegant */
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
+
+  font-weight: 400;
 }
