@@ -47,7 +47,7 @@ function update() {
 
   // Message logic
   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  const index = messages.length - daysLeft;
+  const index = messages.length - daysLeft + 1;
 
   if (index < 0) {
     document.getElementById("message").innerText = "The countdown has begun 💞";
