@@ -39,6 +39,15 @@ function update() {
   const seconds = totalSeconds % 60;
 
   // Display countdown
+  if (days>1) {
+    document.getElementById("countdown").innerText =
+    `${days} days left till you're my Valentine's 🎀`;
+
+  } else {
+    document.getElementById("countdown").innerText =
+    `${days} day left till you're my Valentine's 🎀`;
+  }
+
   let timerText = "";
 
   if (days > 0) {
