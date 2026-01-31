@@ -1,19 +1,19 @@
 const valentines = new Date("2026-02-14T00:00:00");
 
 const messages = [
-  "I just want to hug and give you all the kisses",
-  "I saw something cute today. Annoying how often that's you",
-  "Love how you make me laugh. Like please put a ring alreadyyyy",
+  "I just want to hug and give you all the kisses.",
+  "I saw something cute today. Annoying how often that's you.",
+  "Love how you make me laugh. Like please put a ring alreadyyyy.",
   "Did you smile today? If not, I volunteer. Me! Me! Me!",
-  "You really are my comfort person",
+  "You really are my comfort person.",
   "Who thought I could really find the best partner?",
-  "I hope we are cats in the next life, so I can purr on you all the time",
-  "I think of you everytime I see something nice, cute, or hear something funny",
+  "I hope we are cats in the next life, so I can purr on you all the time.",
+  "I think of you everytime I see something nice, cute, or hear something funny.",
   "Your presence brings the fun out of me.",
-  "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me",
-  "Growing old with you will be the most sweetest thing I'd have done in life",
-  "I can't contemplate how pretty you look, how deep I've fallen in love with you",
-  "Can we be the bestest friends forever? I'd love to take care of you and be close with you",
+  "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me.",
+  "Growing old with you will be the most sweetest thing I'd have done in life.",
+  "I can't contemplate how pretty you look, how deep I've fallen in love with you.",
+  "Can we be the bestest friends forever? I'd love to take care of you and be close with you.",
   "Be my valentine forever. I love you so much 🌹"
 ];
 
@@ -21,7 +21,7 @@ const messages = [
 
 function update() {
   const now = new Date();
-  const diff = valentines - now + 1;
+  const diff = 0;
 
   // If Valentine’s has passed
   if (diff <= 0) {
@@ -43,7 +43,7 @@ function update() {
     `${days} days left till you're my Valentine's 🎀`;
 
   document.getElementById("timer").innerText =
-    `${hours}h ${minutes}m ${seconds}s`;
+    `${days}days ${hours}h ${minutes}m ${seconds}s`;
 
   // Message logic
   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
