@@ -5,60 +5,75 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
 
-  background: linear-gradient(135deg, #ffe0ec, #ffc2dc, #ffb3d1);
+  /* Plum background */
+  background: linear-gradient(135deg, #3b0a2a, #5a103a, #7a1c4d);
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* CARD */
 .card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* Light pink card */
+  background: rgba(255, 228, 239, 0.85);
 
-  padding: 50px 45px;
-  border-radius: 40px;
-  max-width: 900px;
-  width: 95%;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding: 55px 70px;              /* more horizontal breathing room */
+  border-radius: 42px;
+
+  max-width: 1100px;               /* WIDER */
+  width: 92%;
+
   text-align: center;
 
-  box-shadow: 
-    0 25px 60px rgba(0, 0, 0, 0.15),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
 }
 
+/* HEADING */
 h1 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: #5a103a;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-weight: 600;
 }
 
+/* COUNTDOWN TEXT */
 #countdown {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #7a1c4d;
   font-weight: 500;
   margin-top: 6px;
 }
 
-#message {
-  margin-top: 28px;
-  font-size: 1.2rem;
-  color: #4a082c;
-  line-height: 1.7;
+/* TIMER */
+#timer {
+  margin-top: 12px;
+  font-size: 1rem;
+  letter-spacing: 1.4px;
+  color: #7a1c4d;
+  opacity: 0.8;
 }
 
-#timer {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  letter-spacing: 1.2px;
-  color: #7a1c4d;
-  opacity: 0.75;
+/* MESSAGE */
+#message {
+  margin-top: 34px;
+  font-size: 1.25rem;
+  color: #4a082c;
+  line-height: 1.75;
+
+  max-width: 850px;                /* keeps text elegant */
+  margin-left: auto;
+  margin-right: auto;
 }
