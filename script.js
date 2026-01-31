@@ -39,22 +39,22 @@ function update() {
   const seconds = totalSeconds % 60;
 
   // Display countdown
-let timerText = "";
+  let timerText = "";
 
-if (days > 0) {
-  timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
-} 
-else if (hours > 0) {
-  timerText = `${hours}h ${minutes}m ${seconds}s`;
-} 
-else if (minutes > 0) {
-  timerText = `${minutes}m ${seconds}s`;
-} 
-else {
-  timerText = `${seconds}s`;
-}
+  if (days > 0) {
+    timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
+  } 
+  else if (hours > 0) {
+    timerText = `${hours}h ${minutes}m ${seconds}s`;
+  } 
+  else if (minutes > 0) {
+    timerText = `${minutes}m ${seconds}s`;
+  } 
+  else {
+    timerText = `${seconds}s`;
+  }
 
-document.getElementById("timer").innerText = timerText;
+  document.getElementById("timer").innerText = timerText;
 
   
   // Message logic
