@@ -13,8 +13,7 @@ const messages = [
   "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me",
   "Growing old with you will be the most sweetest thing I'd have done in life",
   "I can't contemplate how pretty you look, how deep I've fallen in love with you",
-  "Can we be the bestest friends forever? I'd love to take care of you and be close with you",
-  "Let us have a lovely year, full of fun memories and sweet moments"
+  "Can we be the bestest friends forever? I'd love to take care of you and be close with you"
 ];
 
 
