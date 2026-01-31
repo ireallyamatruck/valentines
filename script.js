@@ -1,32 +1,19 @@
 const valentines = new Date("2026-02-14T00:00:00");
 
 const messages = [
-  "I dint survive today. Barely. Missing you didn’t help.",
-  "You owe me a hug. With interest.",
-  "I saw something cute today. Annoying how often that’s you.",
-  "Reminder: you’re my favorite person. No competition.",
-  "If you were here, this day would’ve been 10x better.",
-  "I hope you smiled today. If not, I volunteer.",
-  "One week of this countdown already. Time’s moving too slow.",
-  "You live rent-free in my head btw.",
-  "I think the universe did a good job the day it made you.",
-  "You’re the reason my standards are permanently ruined.",
-  "Just checking in: still obsessed.",
-  "If I had one wish today, it would be you sitting next to me.",
-  "You’re dangerously easy to miss.",
-  "Halfway through this wait. Still thinking about you daily.",
-  "Do you realize how effortlessly you became important to me?",
-  "I’m convinced you’re my comfort person now.",
-  "One day I’ll tell you all the tiny moments that remind me of you.",
-  "If missing you was a job, I’d be employee of the month.",
-  "You + me + coffee someday soon. Deal?",
-  "I like how you exist. Please continue.",
-  "Almost February. Almost our month.",
-  "You’ve been my favorite thought lately.",
-  "I don’t even try to act nonchalant about you anymore.",
-  "You’re the kind of person I’d choose in every lifetime.",
-  "Countdown feels real now, huh?",
-  "Tomorrow’s the 13th… and I’m very, very excited about us."
+  "I just want to hug and give you all the kisses",
+  "I saw something cute today. Annoying how often that's you",
+  "Love how you make me laugh. Like please put a ring alreadyyyy",
+  "Did you smile today? If not, I volunteer. Me! Me! Me!",
+  "You really are my comfort person",
+  "Who thought I could really find the best partner?",
+  "I hope we are cats in the next life, so I can purr on you all the time",
+  "I think of you everytime I see something nice, cute, or hear something funny",
+  "Your presence brings the fun out of me.",
+  "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me",
+  "Growing old with you will be the most sweetest thing I'd have done in life",
+  "I can't contemplate how pretty you look, how deep I've fallen in love with you",
+  "Can we be the bestest friends forever? I'd love to take care of you and be close with you"
 ];
 
 
