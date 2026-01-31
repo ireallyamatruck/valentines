@@ -14,7 +14,7 @@ const messages = [
   "Growing old with you will be the most sweetest thing I'd have done in life.",
   "I can't contemplate how pretty you look, how deep I've fallen in love with you.",
   "Can we be the bestest friends forever? I'd love to take care of you and be close with you.",
-  "Be my valentine forever. I love you so much 🌹"
+  "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
 
