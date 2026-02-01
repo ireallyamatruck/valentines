@@ -40,6 +40,8 @@ function update() {
 
   if (isValentinesDay) {
     introText.innerHTML = "Will you be my Valentine? 💘";
+    introCard.classList.add("hidden");
+    countdownCard.classList.remove("hidden");
   } else {
     const dayWord = daysLeft === 1 ? "day" : "days";
     daysSpan.innerText = daysLeft;
