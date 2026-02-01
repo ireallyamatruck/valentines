@@ -122,8 +122,8 @@ h1 {
 .intro-text {
   font-size: 1.4rem;
   color: var(--text-dark);
-  margin: 28px auto 40px;
-  max-width: 680px;
+  margin: 28px auto 42px;
+  max-width: 760px;
   line-height: 1.7;
 }
 
