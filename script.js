@@ -20,7 +20,7 @@ const messages = [
 
 
 function update() {
-  const now = new Date("2026-02-13T23:01:00");
+  const now = new Date("2026-02-13T23:59:01");
   const diff = valentines - now;
 
   // If Valentine’s has passed
