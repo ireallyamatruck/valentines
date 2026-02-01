@@ -17,40 +17,11 @@ const messages = [
   "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
-const introCard = document.getElementById("intro-card");
-const countdownCard = document.getElementById("countdown-card");
-const yesBtn = document.getElementById("yes-btn");
-const daysSpan = document.getElementById("days-count");
 
-const introTitle = document.getElementById("intro-title");
-const introText = document.getElementById("intro-text");
-
-const now = new Date("2026-02-13T10:00:00");
-const diff = valentines - now;
-const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
-if (daysLeft === 0) {
-  // Feb 14
-  introTitle.innerText = "Will you be my Valentine?";
-  introText.innerText = "💖";
-}
-else if (daysLeft === 1) {
-  // Feb 13
-  introTitle.innerText = "Will you wait to be my Valentine?";
-  introText.innerText = "🌸";
-}
-else {
-  // Any earlier day
-  introTitle.innerText = "Will you wait for me?";
-  introText.innerText = `Will you wait ${daysLeft - 1} days to be my Valentine? 🌷`;
-}
-
-yesBtn.addEventListener("click", () => {
-  introCard.classList.add("hidden");
-  countdownCard.classList.remove("hidden");
-});
 
 function update() {
+  const now = new Date("2026-02-13T10:00:00");
+  const diff = valentines - now;
 
   // If Valentine’s has passed
   if (diff <= 0) {
@@ -96,6 +67,7 @@ function update() {
 
   
   // Message logic
+  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
   const index = messages.length - daysLeft - 1;
 
   if (index < 0) {
@@ -111,6 +83,16 @@ function update() {
 update();
 setInterval(update, 1000);
 
+const introCard = document.getElementById("intro-card");
+const countdownCard = document.getElementById("countdown-card");
+const yesBtn = document.getElementById("yes-btn");
+const daysSpan = document.getElementById("days-count");
+
+// calculate days left for intro text
+const now = new Date("2026-02-13T10:00:00");
+const diff = valentines - now;
+const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+daysSpan.innerText = daysLeft-1;
 
 // button click
 yesBtn.addEventListener("click", () => {
