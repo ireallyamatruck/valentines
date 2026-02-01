@@ -17,50 +17,6 @@ const messages = [
   "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
-const introCard = document.getElementById("intro-card");
-const countdownCard = document.getElementById("countdown-card");
-const introQuestion = document.getElementById("intro-question");
-const introSubtext = document.getElementById("intro-subtext");
-const yesBtn = document.getElementById("yes-btn");
-
-
-const now = new Date("2026-02-13T10:00:00"); // use new Date() later
-const today = new Date(now);
-today.setHours(0, 0, 0, 0);
-
-const valentinesDay = new Date(valentines);
-valentinesDay.setHours(0, 0, 0, 0);
-
-const introDiff = valentinesDay - today;
-const introDaysLeft = Math.round(introDiff / (1000 * 60 * 60 * 24));
-
-yesBtn.addEventListener("click", () => {
-  introCard.classList.add("hidden");
-  countdownCard.classList.remove("hidden");
-});
-
-
-// Feb 14
-if (daysLeft === 0) {
-  introQuestion.innerText = "Will you be my Valentine?";
-  introSubtext.innerText = "";
-  yesBtn.innerText = "Yes, always 💗";
-}
-
-// Feb 13
-else if (daysLeft === 1) {
-  introQuestion.innerText = "It’s getting close, isn’t it?";
-  introSubtext.innerText = "";
-  yesBtn.innerText = "Yes, it is 💞";
-}
-
-// Any earlier day
-else {
-  introQuestion.innerText = "Will you wait for me?";
-  introSubtext.innerText =
-    `Will you wait ${daysLeft} days to be my Valentine? 🌸`;
-  yesBtn.innerText = "Yes, always 💗";
-}
 
 function update() {
     const now = new Date("2026-02-13T10:00:00"); // change to new Date() later
@@ -90,7 +46,7 @@ function update() {
         `1 day left till you're my Valentine's 🎀`;
     } else {
       document.getElementById("countdown").innerText =
-        `I think you know what's gonna happen 🤭`;
+        `I think you know what's gonna happen`;
     }
 
     // Timer formatting
@@ -122,6 +78,20 @@ function update() {
       document.getElementById("message").innerText =
         messages[index];
     }
+  
+  const introCard = document.getElementById("intro-card");
+  const countdownCard = document.getElementById("countdown-card");
+  const yesBtn = document.getElementById("yes-btn");
+  const daysSpan = document.getElementById("days-count");
+
+  // calculate days left for intro text
+  daysSpan.innerText = daysLeft;
+
+  // button click
+  yesBtn.addEventListener("click", () => {
+    introCard.classList.add("hidden");
+    countdownCard.classList.remove("hidden");
+});
 }
 
 update();
