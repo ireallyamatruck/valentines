@@ -17,11 +17,50 @@ const messages = [
   "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
+const introCard = document.getElementById("intro-card");
+const countdownCard = document.getElementById("countdown-card");
+const introQuestion = document.getElementById("intro-question");
+const introSubtext = document.getElementById("intro-subtext");
+const yesBtn = document.getElementById("yes-btn");
 
+
+const now = new Date("2026-02-13T10:00:00");
+
+// normalize dates
+const today = new Date(now);
+today.setHours(0, 0, 0, 0);
+
+const valentinesDay = new Date(valentines);
+valentinesDay.setHours(0, 0, 0, 0);
+
+// calculate days left
+const diff = valentinesDay - today;
+const daysLeft = Math.round(diff / (1000 * 60 * 60 * 24));
+
+
+// Feb 14
+if (daysLeft === 0) {
+  introQuestion.innerText = "Will you be my Valentine?";
+  introSubtext.innerText = "";
+  yesBtn.innerText = "Yes, always 💗";
+}
+
+// Feb 13
+else if (daysLeft === 1) {
+  introQuestion.innerText = "It’s getting close, isn’t it?";
+  introSubtext.innerText = "";
+  yesBtn.innerText = "Yes, it is 💞";
+}
+
+// Any earlier day
+else {
+  introQuestion.innerText = "Will you wait for me?";
+  introSubtext.innerText =
+    `Will you wait ${daysLeft} days to be my Valentine? 🌸`;
+  yesBtn.innerText = "Yes, always 💗";
+}
 
 function update() {
-  const now = new Date("2026-02-13T10:00:00");
-  const diff = valentines - now;
 
   // If Valentine’s has passed
   if (diff <= 0) {
@@ -77,25 +116,9 @@ function update() {
   } else {
     document.getElementById("message").innerText = messages[index];
   }
-}
 
 
 update();
 setInterval(update, 1000);
 
-const introCard = document.getElementById("intro-card");
-const countdownCard = document.getElementById("countdown-card");
-const yesBtn = document.getElementById("yes-btn");
-const daysSpan = document.getElementById("days-count");
-
-// calculate days left for intro text
-const now = new Date("2026-02-13T10:00:00");
-const diff = valentines - now;
-const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-daysSpan.innerText = daysLeft-1;
-
-// button click
-yesBtn.addEventListener("click", () => {
-  introCard.classList.add("hidden");
-  countdownCard.classList.remove("hidden");
-});
+};
