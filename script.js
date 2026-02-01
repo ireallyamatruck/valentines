@@ -51,7 +51,7 @@ function update() {
     const dayWord = daysLeft === 1 ? "day" : "days";
     daysSpan.innerText = daysLeft;
     introText.innerHTML =
-      `Will you wait <span id="days-count">${daysLeft}</span> ${dayWord} to be my Valentine? 🌸`;
+      `Will you wait <span id="days-count">${daysLeft}</span> ${dayWord} to be my Valentine? 💕`;
   }
 
 
