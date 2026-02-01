@@ -27,7 +27,7 @@ yesBtn.addEventListener("click", () => {
 });
 
 function update() {
-  const now = new Date("2026-02-13T00:00:01"); // use real time
+  const now = new Date("2026-02-13T23:01:01"); // use real time
   const valentines = new Date("2026-02-14T00:00:00");
 
   const diff = valentines - now;
