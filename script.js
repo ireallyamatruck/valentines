@@ -25,7 +25,7 @@ const daysSpan = document.getElementById("days-count");
 const introTitle = document.getElementById("intro-title");
 const introText = document.getElementById("intro-text");
 
-const now = new Date("2026-02-13T10:00:00"); // use new Date() in production
+const now = new Date("2026-02-13T10:00:00");
 const diff = valentines - now;
 const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
