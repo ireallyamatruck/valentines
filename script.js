@@ -81,10 +81,20 @@ function update() {
       `I think you know what's gonna happen 🤭`;
   }
 
-  document.getElementById("timer").innerText =
-    days > 0
-      ? `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`
-      : `${hours}h ${minutes}m ${seconds}s`;
+  // Timer formatting
+  let timerText = "";
+
+  if (days > 0) {
+    timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
+  } else if (hours > 0) {
+    timerText = `${hours}h ${minutes}m ${seconds}s`;
+  } else if (minutes > 0) {
+    timerText = `${minutes}m ${seconds}s`;
+  } else {
+    timerText = `${seconds}s`;
+  }
+
+  document.getElementById("timer").innerText = timerText;
 
   const index = messages.length - daysLeft - 1;
 
