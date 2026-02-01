@@ -65,7 +65,7 @@ function update() {
 
   if (days > 1) {
     document.getElementById("countdown").innerText =
-      `${days} days left till you're my Valentine's 🎀`;
+      `${days+1} days left till you're my Valentine's 🎀`;
   } else if (days === 1) {
     document.getElementById("countdown").innerText =
       `1 day left till you're my Valentine's 🎀`;
