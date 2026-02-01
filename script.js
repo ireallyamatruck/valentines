@@ -17,6 +17,14 @@ const messages = [
   "Two years, lots of memories and a lifetime to go with you. I love you so much baby"
 ];
 
+const introCard = document.getElementById("intro-card");
+const countdownCard = document.getElementById("countdown-card");
+const yesBtn = document.getElementById("yes-btn");
+
+yesBtn.addEventListener("click", () => {
+  introCard.classList.add("hidden");
+  countdownCard.classList.remove("hidden");
+});
 
 function update() {
   const now = new Date("2026-02-14T00:00:01"); // use real time
@@ -24,9 +32,7 @@ function update() {
 
   const diff = valentines - now;
 
-  const introCard = document.getElementById("intro-card");
-  const countdownCard = document.getElementById("countdown-card");
-  const yesBtn = document.getElementById("yes-btn");
+
   const daysSpan = document.getElementById("days-count");
   const introText = document.querySelector(".intro-text");
 
@@ -40,8 +46,7 @@ function update() {
 
   if (isValentinesDay) {
     introText.innerHTML = "Will you be my Valentine? 💘";
-    introCard.classList.add("hidden");
-    countdownCard.classList.remove("hidden");
+    
   } else {
     const dayWord = daysLeft === 1 ? "day" : "days";
     daysSpan.innerText = daysLeft;
@@ -56,7 +61,6 @@ function update() {
     document.getElementById("timer").innerText = "";
     document.getElementById("message").innerText =
       messages[messages.length - 1];
-    return;
   }
 
   const totalSeconds = Math.floor(diff / 1000);
@@ -87,11 +91,6 @@ function update() {
     index < 0
       ? "The countdown has begun 💞"
       : messages[Math.min(index, messages.length - 1)];
-
-  yesBtn.addEventListener("click", () => {
-    introCard.classList.add("hidden");
-    countdownCard.classList.remove("hidden");
-  });
 }
 
 update();
