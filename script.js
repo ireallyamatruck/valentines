@@ -19,81 +19,80 @@ const messages = [
 
 
 function update() {
-    const now = new Date("2026-02-13T10:00:00"); // change to new Date() later
-    const diff = valentines - now;
+  const now = new Date(); // use real time
+  const valentines = new Date("2026-02-14T00:00:00");
 
-    if (diff <= 0) {
-      document.getElementById("countdown").innerText =
-        "Happy Valentine's Sweetheart 💋";
-      document.getElementById("timer").innerText = "";
-      document.getElementById("message").innerText =
-        messages[messages.length - 1];
-      return;
-    }
+  const diff = valentines - now;
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / (60 * 60 * 24));
-    const hours = Math.floor((totalSeconds / (60 * 60)) % 24);
-    const minutes = Math.floor((totalSeconds / 60) % 60);
-    const seconds = totalSeconds % 60;
-
-    // Countdown heading
-    if (days > 1) {
-      document.getElementById("countdown").innerText =
-        `${days} days left till you're my Valentine's 🎀`;
-    } else if (days === 1) {
-      document.getElementById("countdown").innerText =
-        `1 day left till you're my Valentine's 🎀`;
-    } else {
-      document.getElementById("countdown").innerText =
-        `I think you know what's gonna happen`;
-    }
-
-    // Timer formatting
-    let timerText = "";
-
-    if (days > 0) {
-      timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
-    } else if (hours > 0) {
-      timerText = `${hours}h ${minutes}m ${seconds}s`;
-    } else if (minutes > 0) {
-      timerText = `${minutes}m ${seconds}s`;
-    } else {
-      timerText = `${seconds}s`;
-    }
-
-    document.getElementById("timer").innerText = timerText;
-
-    // Message logic
-    const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    const index = messages.length - daysLeft - 1;
-
-    if (index < 0) {
-      document.getElementById("message").innerText =
-        "The countdown has begun 💞";
-    } else if (index >= messages.length) {
-      document.getElementById("message").innerText =
-        messages[messages.length - 1];
-    } else {
-      document.getElementById("message").innerText =
-        messages[index];
-    }
-  
   const introCard = document.getElementById("intro-card");
   const countdownCard = document.getElementById("countdown-card");
   const yesBtn = document.getElementById("yes-btn");
   const daysSpan = document.getElementById("days-count");
+  const introText = document.querySelector(".intro-text");
 
-  // calculate days left for intro text
-  daysSpan.innerText = daysLeft;
+  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-  // button click
+  /* ---------------- INTRO CARD LOGIC ---------------- */
+
+  const isValentinesDay =
+    now.getFullYear() === 2026 &&
+    now.getMonth() === 1 &&   // February (0-based)
+    now.getDate() === 14;
+
+  if (isValentinesDay) {
+    introText.innerHTML = "Will you be my Valentine? 💘";
+  } else {
+    const dayWord = daysLeft === 1 ? "day" : "days";
+    daysSpan.innerText = daysLeft;
+    introText.innerHTML =
+      `Will you wait <span id="days-count">${daysLeft}</span> ${dayWord} to be my Valentine? 🌸`;
+  }
+
+  /* ---------------- COUNTDOWN CARD ---------------- */
+
+  if (diff <= 0) {
+    document.getElementById("countdown").innerText =
+      "Happy Valentine's Sweetheart 💋";
+    document.getElementById("timer").innerText = "";
+    document.getElementById("message").innerText =
+      messages[messages.length - 1];
+    return;
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds / (60 * 60)) % 24);
+  const minutes = Math.floor((totalSeconds / 60) % 60);
+  const seconds = totalSeconds % 60;
+
+  if (days > 1) {
+    document.getElementById("countdown").innerText =
+      `${days} days left till you're my Valentine's 🎀`;
+  } else if (days === 1) {
+    document.getElementById("countdown").innerText =
+      `1 day left till you're my Valentine's 🎀`;
+  } else {
+    document.getElementById("countdown").innerText =
+      `I think you know what's gonna happen 🤭`;
+  }
+
+  document.getElementById("timer").innerText =
+    days > 0
+      ? `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`
+      : `${hours}h ${minutes}m ${seconds}s`;
+
+  const index = messages.length - daysLeft - 1;
+
+  document.getElementById("message").innerText =
+    index < 0
+      ? "The countdown has begun 💞"
+      : messages[Math.min(index, messages.length - 1)];
+
   yesBtn.addEventListener("click", () => {
     introCard.classList.add("hidden");
     countdownCard.classList.remove("hidden");
-});
+  });
 }
 
 update();
 setInterval(update, 1000);
-
