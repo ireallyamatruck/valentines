@@ -147,3 +147,10 @@ h1 {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(122, 28, 77, 0.4);
 }
+
+#intro-card {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
