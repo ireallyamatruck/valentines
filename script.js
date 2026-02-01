@@ -43,7 +43,7 @@ function update() {
     document.getElementById("countdown").innerText =
     `${days} days left till you're my Valentine's 🎀`;
 
-  } else if (days==0) {
+  } else if (days==1) {
     document.getElementById("countdown").innerText =
     `${days} day left till you're my Valentine's 🎀`;
   }
