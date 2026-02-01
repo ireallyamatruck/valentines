@@ -61,6 +61,7 @@ function update() {
     document.getElementById("timer").innerText = "";
     document.getElementById("message").innerText =
       messages[messages.length - 1];
+    return;
   }
 
   const totalSeconds = Math.floor(diff / 1000);
@@ -72,10 +73,10 @@ function update() {
   if (days > 1) {
     document.getElementById("countdown").innerText =
       `${days+1} days left till you're my Valentine's 🎀`;
-  } else if (days === 1) {
+  } else if (days == 1) {
     document.getElementById("countdown").innerText =
       `1 day left till you're my Valentine's 🎀`;
-  } else {
+  } else if (days == 0){
     document.getElementById("countdown").innerText =
       `I think you know what's gonna happen 🤭`;
   }
