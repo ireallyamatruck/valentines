@@ -19,7 +19,7 @@ const messages = [
 
 
 function update() {
-  const now = new Date(); // use real time
+  const now = new Date("2026-02-13T10:00:00"); // use real time
   const valentines = new Date("2026-02-14T00:00:00");
 
   const diff = valentines - now;
@@ -32,7 +32,6 @@ function update() {
 
   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-  /* ---------------- INTRO CARD LOGIC ---------------- */
 
   const isValentinesDay =
     now.getFullYear() === 2026 &&
@@ -48,7 +47,6 @@ function update() {
       `Will you wait <span id="days-count">${daysLeft}</span> ${dayWord} to be my Valentine? 🌸`;
   }
 
-  /* ---------------- COUNTDOWN CARD ---------------- */
 
   if (diff <= 0) {
     document.getElementById("countdown").innerText =
