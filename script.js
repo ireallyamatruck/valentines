@@ -24,18 +24,20 @@ const introSubtext = document.getElementById("intro-subtext");
 const yesBtn = document.getElementById("yes-btn");
 
 
-const now = new Date("2026-02-13T10:00:00");
-
-// normalize dates
+const now = new Date("2026-02-13T10:00:00"); // use new Date() later
 const today = new Date(now);
 today.setHours(0, 0, 0, 0);
 
 const valentinesDay = new Date(valentines);
 valentinesDay.setHours(0, 0, 0, 0);
 
-// calculate days left
-const diff = valentinesDay - today;
-const daysLeft = Math.round(diff / (1000 * 60 * 60 * 24));
+const introDiff = valentinesDay - today;
+const introDaysLeft = Math.round(introDiff / (1000 * 60 * 60 * 24));
+
+yesBtn.addEventListener("click", () => {
+  introCard.classList.add("hidden");
+  countdownCard.classList.remove("hidden");
+});
 
 
 // Feb 14
@@ -61,64 +63,67 @@ else {
 }
 
 function update() {
+    const now = new Date("2026-02-13T10:00:00"); // change to new Date() later
+    const diff = valentines - now;
 
-  // If Valentine’s has passed
-  if (diff <= 0) {
-    document.getElementById("countdown").innerText = "Happy Valentine's Sweetheart 💋";
-    document.getElementById("timer").innerText = "";
-    document.getElementById("message").innerText = messages[messages.length - 1];
-    return;
-  }
+    if (diff <= 0) {
+      document.getElementById("countdown").innerText =
+        "Happy Valentine's Sweetheart 💋";
+      document.getElementById("timer").innerText = "";
+      document.getElementById("message").innerText =
+        messages[messages.length - 1];
+      return;
+    }
 
-  // Time calculations
-  const totalSeconds = Math.floor(diff / 1000);
-  const days = Math.floor(totalSeconds / (60 * 60 * 24));
-  const hours = Math.floor((totalSeconds / (60 * 60)) % 24);
-  const minutes = Math.floor((totalSeconds / 60) % 60);
-  const seconds = totalSeconds % 60;
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / (60 * 60 * 24));
+    const hours = Math.floor((totalSeconds / (60 * 60)) % 24);
+    const minutes = Math.floor((totalSeconds / 60) % 60);
+    const seconds = totalSeconds % 60;
 
-  // Display countdown
-  if (days>1) {
-    document.getElementById("countdown").innerText =
-    `${days} days left till you're my Valentine's 🎀`;
+    // Countdown heading
+    if (days > 1) {
+      document.getElementById("countdown").innerText =
+        `${days} days left till you're my Valentine's 🎀`;
+    } else if (days === 1) {
+      document.getElementById("countdown").innerText =
+        `1 day left till you're my Valentine's 🎀`;
+    } else {
+      document.getElementById("countdown").innerText =
+        `I think you know what's gonna happen 🤭`;
+    }
 
-  } else if (days==1) {
-    document.getElementById("countdown").innerText =
-    `${days} day left till you're my Valentine's 🎀`;
-  }
+    // Timer formatting
+    let timerText = "";
 
-  let timerText = "";
+    if (days > 0) {
+      timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
+    } else if (hours > 0) {
+      timerText = `${hours}h ${minutes}m ${seconds}s`;
+    } else if (minutes > 0) {
+      timerText = `${minutes}m ${seconds}s`;
+    } else {
+      timerText = `${seconds}s`;
+    }
 
-  if (days > 0) {
-    timerText = `${days} ${days === 1 ? "day" : "days"} ${hours}h ${minutes}m ${seconds}s`;
-  } 
-  else if (hours > 0) {
-    timerText = `${hours}h ${minutes}m ${seconds}s`;
-  } 
-  else if (minutes > 0) {
-    timerText = `${minutes}m ${seconds}s`;
-  } 
-  else {
-    timerText = `${seconds}s`;
-  }
+    document.getElementById("timer").innerText = timerText;
 
-  document.getElementById("timer").innerText = timerText;
+    // Message logic
+    const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    const index = messages.length - daysLeft - 1;
 
-  
-  // Message logic
-  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  const index = messages.length - daysLeft - 1;
-
-  if (index < 0) {
-    document.getElementById("message").innerText = "The countdown has begun 💞";
-  } else if (index >= messages.length) {
-    document.getElementById("message").innerText = messages[messages.length - 1];
-  } else {
-    document.getElementById("message").innerText = messages[index];
-  }
-
+    if (index < 0) {
+      document.getElementById("message").innerText =
+        "The countdown has begun 💞";
+    } else if (index >= messages.length) {
+      document.getElementById("message").innerText =
+        messages[messages.length - 1];
+    } else {
+      document.getElementById("message").innerText =
+        messages[index];
+    }
+}
 
 update();
 setInterval(update, 1000);
 
-};
