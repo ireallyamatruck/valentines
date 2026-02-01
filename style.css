@@ -113,3 +113,37 @@ h1 {
     line-height: 1.7;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+/* Intro text */
+.intro-text {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin: 28px auto 40px;
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+/* YES button */
+#yes-btn {
+  background: linear-gradient(135deg, #7a1c4d, #9b2d66);
+  color: white;
+  border: none;
+  border-radius: 999px;
+
+  padding: 16px 38px;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#yes-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(122, 28, 77, 0.4);
+}

@@ -5,11 +5,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
+  <div class="card" id="intro-card">
+    <h1>Will you wait for me?</h1>
+    <p class="intro-text">
+      Will you wait <span id="days-count"></span> days to be my Valentine? 🌸
+    </p>
+
+    <button id="yes-btn">Yes, always 💗</button>
+  </div>
+
+  <div class="card hidden" id="countdown-card">
     <h1>For the Love of My Life</h1>
-    <p id="countdown"></p>
-    <p id="timer"></p>
-    <p id="message"></p>
+    <div id="countdown"></div>
+    <div id="timer"></div>
+    <div id="message"></div>
   </div>
 
   <script src="script.js"></script>

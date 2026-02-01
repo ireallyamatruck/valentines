@@ -82,3 +82,20 @@ function update() {
 
 update();
 setInterval(update, 1000);
+
+const introCard = document.getElementById("intro-card");
+const countdownCard = document.getElementById("countdown-card");
+const yesBtn = document.getElementById("yes-btn");
+const daysSpan = document.getElementById("days-count");
+
+// calculate days left for intro text
+const now = new Date();
+const diff = valentines - now;
+const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+daysSpan.innerText = daysLeft;
+
+// button click
+yesBtn.addEventListener("click", () => {
+  introCard.classList.add("hidden");
+  countdownCard.classList.remove("hidden");
+});
