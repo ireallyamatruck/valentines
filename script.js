@@ -20,7 +20,7 @@ const messages = [
 
 
 function update() {
-  const now = new Date();
+  const now = new Date("2026-02-13T10:00:00");
   const diff = valentines - now;
 
   // If Valentine’s has passed
@@ -89,10 +89,10 @@ const yesBtn = document.getElementById("yes-btn");
 const daysSpan = document.getElementById("days-count");
 
 // calculate days left for intro text
-const now = new Date();
+const now = new Date("2026-02-13T10:00:00");
 const diff = valentines - now;
 const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-daysSpan.innerText = daysLeft;
+daysSpan.innerText = daysLeft-1;
 
 // button click
 yesBtn.addEventListener("click", () => {
