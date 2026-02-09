@@ -9,7 +9,7 @@ const messages = [
   "Who thought I could really find the best partner?",
   "I hope we are cats in the next life, so I can purr on you all the time.",
   "I think of you everytime I see something nice, cute, or hear something funny.",
-  "Your presence brings the fun out of me.",
+  "Being so far sucks. I wanna know how it'd be like to be loved when you're close.",
   "I love when you take care of things for me. Like yes tell me how to eat, give me skincare, kiss me.",
   "Growing old with you will be the most sweetest thing I'd have done in life.",
   "I can't contemplate how pretty you look, how deep I've fallen in love with you.",
